@@ -1,18 +1,26 @@
+from abc import ABC, abstractmethod
+
 class BaseBO:
     def __init__(self, db):
         self.db = db
 
-    def get(self, id):
-        return self.db.get(id)
-
-    def list(self):
-        return self.db.list()
-
+    @abstractmethod
     def create(self, data):
-        return self.db.create(data)
+        raise NotImplementedError
 
+    @abstractmethod
     def update(self, id, data):
-        return self.db.update(id, data)
+        raise NotImplementedError
 
+    @abstractmethod
     def delete(self, id):
-        return self.db.delete(id)
+        raise NotImplementedError
+
+    @abstractmethod
+    def list(self, skip: int = 0, limit: int = 100):
+        raise NotImplementedError
+
+    @abstractmethod
+    def get(self, id):
+        raise NotImplementedError
+

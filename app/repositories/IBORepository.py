@@ -10,8 +10,8 @@ class IBORepository:
     def list(self, skip: int = 0, limit: int = 100):
         return self.instance.list(skip, limit)
     
-    def create(self, data):
-        return self.instance.create(data)
+    def create(self, *args, **kwargs):
+        return self.instance.create(*args, **kwargs)
     
     def update(self, id, data):
         return self.instance.update(id, data)

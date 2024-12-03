@@ -4,12 +4,12 @@ from app.DAO.classes_dao import ClassesDAO
 from app.BO.base import BaseBO
 
 class ClassesBO(BaseBO):
-    def __init__(self, db: Session, classes_dao: ClassesDAO):
+    def __init__(self, db: Session):
         """
         Dependency injection: db session and classes_dao are injected from outside.
         """
         super().__init__(db)  # Initialize the base class with the db session
-        self.classes_dao = classes_dao  # Injected DAO instance
+        self.classes_dao = ClassesDAO()  # Injected DAO instance
 
     def create(self, name: str):
         # Check if class already exists

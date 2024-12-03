@@ -1,0 +1,2 @@
+from app.routers.students_routers import api_students_routers
+from app.routers.classes_routers import api_classes_routers
